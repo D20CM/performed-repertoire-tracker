@@ -6,13 +6,13 @@
 //There should be a to show all unperformed songs, listed by least recently played.
 //For the purposes of this project, I'd like to build this app using an api server linked to a Postgres db.
 
-//build the server and api routes with express, using a local array of songs as a test case initially.
-//initialise folder as an npm package - install express, nodemon, pg, dotenv.
-//add prettier config
-//add git ignore - add .env file here before committing
-//type: module
-//use express generator to setup initial file structure
+//initialise folder as an npm package - install express, nodemon, pg, dotenv. --DONE
+//add prettier config --DONE
+//add git ignore - add .env file here before committing --DONE
+//type: module --DONE
+//use express generator to setup initial file structure --DONE
 //understand what's going on in this structure
+//build the server and api routes with express, using a local array of songs as a test case initially.
 //follow previous project's conventions for creating the api routes, logic, imports/exports etc
 //test with Postman
 

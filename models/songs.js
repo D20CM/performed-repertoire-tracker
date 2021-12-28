@@ -5,3 +5,11 @@ export async function getAllSongs() {
   console.log(allSongs);
   return allSongs;
 }
+
+export async function getSongByID(id) {
+  let selectedSong = songlist.find(function (song) {
+    return song.id === id;
+  });
+  console.log(selectedSong);
+  return selectedSong;
+}
