@@ -7,15 +7,16 @@ import logger from "morgan";
 
 import indexRouter from "./routes/index.js";
 import usersRouter from "./routes/song-routes.js";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "jade");
+// // view engine setup
+// app.set("views", path.join(__dirname, "views"));
+// app.set("view engine", "jade");
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -25,6 +26,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/", usersRouter);
+
+app.use(cors);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
