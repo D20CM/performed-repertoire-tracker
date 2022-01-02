@@ -9,11 +9,19 @@
   </head>
   <body>
     <h1>Repertoire Tracker</h1>
+    <time id="date-header"></time>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, qui
       tempora. Natus ullam expedita assumenda voluptatibus ad, quae eos! Vitae
       ab illo repellat dolore quam eligendi nam dicta voluptates eius.
     </p>
+    <label for="date-input">Reference Date</label>
+    <input id="date-input" type="date" />
+    <input id="date-submit" type="submit" />
+    <div id="filter-buttons">
+      <button id="played-button">Played</button>
+      <button id="unplayed-button">Not Played</button>
+    </div>
     <button id="get-all-songs">Get all songs</button>
     <div id="songs-display-area"></div>
     <script src="./javascripts/main.js"></script>

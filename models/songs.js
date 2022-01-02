@@ -32,7 +32,9 @@ export async function updateLastPlayed(id, date) {
   let index = songlist.findIndex(function (song) {
     return song.id === id;
   });
-
-  songlist[index].lastPerformed = date.date;
+  console.log("here");
+  console.log(index, id);
+  console.log(songlist[index]);
+  songlist[index].lastPerformed = date.lastPerformed.lastPerformed;
   return songlist[index];
 }
