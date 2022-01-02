@@ -4,6 +4,7 @@ import {
   getSongByID,
   addSong,
   updateSong,
+  updateLastPlayed,
 } from "../models/songs.js";
 
 const router = express.Router();
@@ -34,6 +35,13 @@ router.put("/songs/:id", async function (req, res) {
   let id = Number(req.params.id);
   let update = req.body;
   let updatedSong = await updateSong(id, update);
+  res.json(updatedSong);
+});
+
+router.patch("/songs/:id", async function (req, res) {
+  let id = Number(req.params.id);
+  let update = req.body;
+  let updatedSong = await updateLastPlayed(id, update);
   res.json(updatedSong);
 });
 

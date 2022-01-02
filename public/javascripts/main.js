@@ -13,7 +13,7 @@ async function showAllSongs() {
 
   allSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
-    uniqueSong.innerHTML = `<p>${item.id}. ${item.title}:  ${item.lastPerformed}</p>`;
+    uniqueSong.innerHTML = `<div class = "song"><p>${item.id}. ${item.title}:  ${item.lastPerformed}  </p><button class="played-button">Played</button></div>`;
     songsDisplayArea.append(uniqueSong);
   });
 }

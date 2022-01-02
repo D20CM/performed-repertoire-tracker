@@ -27,3 +27,12 @@ export async function updateSong(id, update) {
   songlist[index] = update;
   return songlist[index];
 }
+
+export async function updateLastPlayed(id, date) {
+  let index = songlist.findIndex(function (song) {
+    return song.id === id;
+  });
+
+  songlist[index].lastPerformed = date.date;
+  return songlist[index];
+}
