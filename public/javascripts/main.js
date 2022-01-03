@@ -11,7 +11,7 @@ let unplayedButton = document.getElementById("unplayed-button");
 let playedButton = document.getElementById("played-button");
 
 let today = new Date().toLocaleDateString();
-dateHeader.innerText = today;
+dateHeader.innerText = "Today's date: " + today;
 
 dateSubmit.addEventListener("click", handleDateSubmit);
 let referenceDate;
@@ -33,7 +33,7 @@ async function showAllSongs() {
   allSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}. ${item.title}:  ${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -45,7 +45,7 @@ async function showAllSongs() {
     });
     console.log(Date.parse(item.lastPerformed));
     if (Date.parse(item.lastPerformed) < referenceDate) {
-      uniqueSong.style.color = "Yellow";
+      uniqueSong.style.color = "#6beb34";
     } else if (Date.parse(item.lastPerformed) > referenceDate) {
       uniqueSong.style.color = "Red";
     }
@@ -86,7 +86,7 @@ async function showUnplayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}. ${item.title}:  ${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -117,7 +117,7 @@ async function showPlayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}. ${item.title}:  ${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");

@@ -12,12 +12,12 @@
 //type: module --DONE
 //use express generator to setup initial file structure --DONE
 //understand what's going on in this structure
-//build the server and api routes with express, using a local array of songs as a test case initially.
-//follow previous project's conventions for creating the api routes, logic, imports/exports etc
-//test with Postman
+//build the server and api routes with express, using a local array of songs as a test case initially.--DONE
+//follow previous project's conventions for creating the api routes, logic, imports/exports etc --DONE
+//test with Postman --DONE
 
-//build a front end that will combine different user inputs from a form and automatically construct the relevant query.
-//wireframe with pencil paper to visualise functionality
+//build a front end that will combine different user inputs from a form and automatically construct the relevant query.--DONE
+//wireframe with pencil paper to visualise functionality --DONE
 
 //transfer the repertoire list to a SQL database and edit the server logic accordingly.
 //write functions in their own files to create and populate the database

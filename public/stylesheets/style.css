@@ -1,12 +1,25 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(19, 59, 97);
+  background: rgb(33, 64, 164);
+  background: linear-gradient(
+    90deg,
+    rgba(33, 64, 164, 1) 32%,
+    rgba(20, 82, 140, 1) 75%
+  );
   color: whitesmoke;
+  text-align: center;
+  height: 100vh;
 }
 
 a {
   color: #00b7ff;
+}
+
+button {
+  margin: 1em;
+  padding: 0.2em 1em;
+  border-radius: 30px;
 }
 
 nav {
@@ -16,18 +29,43 @@ nav {
 }
 
 .song {
-  display: flex;
-  background-color: rgb(6, 105, 72);
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.5fr 0.5fr;
+  background-color: rgb(43, 43, 43);
+  text-align: left;
+  align-items: center;
   padding: 0 2em;
+  border: 1px solid black;
+}
+
+.song:nth-child(odd) {
+  background-color: rgb(56, 56, 56);
 }
 
 .playedButtons {
-  background-color: rgb(209, 255, 43);
-  border-radius: 10px;
-  padding: 0 2em;
+  background: rgb(240, 254, 10);
+  background: linear-gradient(
+    11deg,
+    rgba(240, 254, 10, 1) 34%,
+    rgba(191, 191, 0) 75%
+  );
+  border-radius: 30px;
+  padding: 0.5em 2em;
+  margin: 1em;
+  max-width: 15em;
 }
 
 #songs-display-area {
+  width: 70%;
+  margin: auto;
   margin-top: 2em;
+  padding: 2em;
+}
+
+.date-in-table {
+  letter-spacing: 0.05rem;
+}
+
+#date-input {
+  margin: 1em;
 }
