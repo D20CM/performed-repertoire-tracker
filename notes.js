@@ -19,10 +19,13 @@
 //build a front end that will combine different user inputs from a form and automatically construct the relevant query.--DONE
 //wireframe with pencil paper to visualise functionality --DONE
 
-//transfer the repertoire list to a SQL database and edit the server logic accordingly.
-//write functions in their own files to create and populate the database
+//transfer the repertoire list to a SQL database and edit the server logic accordingly. --DONE
 
-//use environment variables to enable smooth accessing of the database.
+//write functions in their own files to create and populate the database--DONE
+
+//use environment variables to enable smooth accessing of the database.--DONE
+
+//NEW -- figure out date formatting issues resulting from transfer to postgres --DONE
 
 //if time allows, write some tests to ensure correct functionality and embed recent learning of jest, supertest, and cypress.
 

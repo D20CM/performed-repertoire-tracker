@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+
+dotenv.config();
 const dbconfig = {
   user: process.env.PGUSER,
   host: process.env.PGHOST,

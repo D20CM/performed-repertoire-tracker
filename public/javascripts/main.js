@@ -33,7 +33,7 @@ async function showAllSongs() {
   allSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -41,12 +41,12 @@ async function showAllSongs() {
     uniqueSong.append(uniqueButton);
     uniqueButton.id = item.id;
     uniqueButton.addEventListener("click", async function wrapper() {
-      await markAsPlayed(uniqueButton.id, { lastPerformed: today });
+      await markAsPlayed(uniqueButton.id, { lastperformed: today });
     });
-    console.log(Date.parse(item.lastPerformed));
-    if (Date.parse(item.lastPerformed) < referenceDate) {
+    console.log(Date.parse(item.lastperformed));
+    if (Date.parse(item.lastperformed) < referenceDate) {
       uniqueSong.style.color = "#6beb34";
-    } else if (Date.parse(item.lastPerformed) > referenceDate) {
+    } else if (Date.parse(item.lastperformed) > referenceDate) {
       uniqueSong.style.color = "Red";
     }
   });
@@ -56,9 +56,7 @@ async function markAsPlayed(id, date) {
   console.log("about to update date");
   let response = await fetch(`${url}/songs/${id}`, {
     method: "PATCH",
-    body: JSON.stringify({
-      lastPerformed: date,
-    }),
+    body: JSON.stringify(date),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
@@ -72,7 +70,7 @@ getAllSongsButton.addEventListener("click", showAllSongs);
 
 async function showUnplayed() {
   let unPlayedSongs = allSongs.filter(function (song) {
-    return Date.parse(song.lastPerformed) < referenceDate;
+    return Date.parse(song.lastperformed) < referenceDate;
   });
 
   console.log(
@@ -86,7 +84,7 @@ async function showUnplayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -94,7 +92,7 @@ async function showUnplayed() {
     uniqueSong.append(uniqueButton);
     uniqueButton.id = item.id;
     uniqueButton.addEventListener("click", async function wrapper() {
-      await markAsPlayed(uniqueButton.id, { lastPerformed: today });
+      await markAsPlayed(uniqueButton.id, { lastperformed: today });
     });
   });
 }
@@ -103,7 +101,7 @@ unplayedButton.addEventListener("click", showUnplayed);
 
 async function showPlayed() {
   let unPlayedSongs = allSongs.filter(function (song) {
-    return Date.parse(song.lastPerformed) > referenceDate;
+    return Date.parse(song.lastperformed) > referenceDate;
   });
 
   console.log(
@@ -117,7 +115,7 @@ async function showPlayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastPerformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -125,7 +123,7 @@ async function showPlayed() {
     uniqueSong.append(uniqueButton);
     uniqueButton.id = item.id;
     uniqueButton.addEventListener("click", async function wrapper() {
-      await markAsPlayed(uniqueButton.id, { lastPerformed: today });
+      await markAsPlayed(uniqueButton.id, { lastperformed: today });
     });
   });
 }

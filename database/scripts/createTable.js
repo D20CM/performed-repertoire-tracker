@@ -5,7 +5,7 @@ async function createSonglist() {
         id SERIAL PRIMARY KEY,
         title TEXT,
         artist TEXT,
-        lastPerformed DATE
+        lastperformed DATE
         )`);
   console.log("Created songlist: ", res);
 }
