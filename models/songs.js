@@ -3,7 +3,7 @@ import query from "../database/index.js";
 
 export async function getAllSongs() {
   let allSongs = await query(
-    "SELECT id, title, artist, TO_CHAR(lastperformed,'mm/dd/yyyy') As lastperformed FROM songlist ORDER BY id;"
+    "SELECT id, title, artist, TO_CHAR(lastperformed,'mm/dd/yyyy') As lastperformed FROM songlist ORDER BY title;"
   );
   console.log(allSongs.rows);
   return allSongs.rows;
@@ -68,4 +68,9 @@ export async function updateLastPlayed(id, date) {
   // console.log(songlist[index]);
   // songlist[index].lastperformed = date.lastperformed.lastperformed;
   // return songlist[index];
+}
+
+export async function deleteSong(id) {
+  let songToDelete = await query("DELETE FROM songlist WHERE id = $1;", [id]);
+  return songToDelete.rows;
 }

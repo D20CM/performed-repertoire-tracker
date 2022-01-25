@@ -5,6 +5,7 @@ import {
   addSong,
   updateSong,
   updateLastPlayed,
+  deleteSong,
 } from "../models/songs.js";
 
 const router = express.Router();
@@ -43,6 +44,12 @@ router.patch("/songs/:id", async function (req, res) {
   let update = req.body;
   let updatedSong = await updateLastPlayed(id, update);
   res.json(updatedSong);
+});
+
+router.delete("/songs/:id", async function (req, res) {
+  let id = Number(req.params.id);
+  let deletedSong = await deleteSong(id);
+  res.json(deletedSong);
 });
 
 export default router;
