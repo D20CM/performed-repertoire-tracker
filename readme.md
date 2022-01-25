@@ -6,8 +6,8 @@ It would also be a benefit to flag up songs or pieces that haven't been performe
 ## My requirements
 
 There should be a way to store and display the total repertoire, and to mark a particular song as 'performed' for the current rotation.
-The list should have some means of resetting - either by selectinga new date range, or by clearing all 'performed' tags.
-There should be a to show all unperformed songs, listed by least recently played.
+The list should have some means of resetting - either by selecting a new date range, or by clearing all 'performed' tags.
+There should be a way to show all unperformed songs, listed by least recently played.
 For the purposes of this project, I'd like to build this app using an api server linked to a Postgres db.
 
 ## Screenshot
