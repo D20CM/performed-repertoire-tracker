@@ -10,6 +10,10 @@ The list should have some means of resetting - either by selectinga new date ran
 There should be a to show all unperformed songs, listed by least recently played.
 For the purposes of this project, I'd like to build this app using an api server linked to a Postgres db.
 
+## Screenshot
+
+[![Screenshot.png](https://i.postimg.cc/3wy1jSFt/Screenshot.png)](https://postimg.cc/7CkSwNcz)
+
 ## My initial plan
 
 - initialise folder as an npm package - install express, nodemon, pg, dotenv. --DONE
