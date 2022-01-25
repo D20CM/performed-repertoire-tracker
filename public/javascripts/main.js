@@ -1,5 +1,5 @@
 // import songlist from "../../database/songs-data.js";
-const url = "http://localhost:3000";
+const url = "http://localhost:3005";
 
 let getAllSongsButton = document.getElementById("get-all-songs");
 let songsDisplayArea = document.getElementById("songs-display-area");
@@ -10,7 +10,7 @@ let dateSubmit = document.getElementById("date-submit");
 let unplayedButton = document.getElementById("unplayed-button");
 let playedButton = document.getElementById("played-button");
 
-let today = new Date().toLocaleDateString();
+let today = new Date().toDateString();
 dateHeader.innerText = "Today's date: " + today;
 
 dateSubmit.addEventListener("click", handleDateSubmit);
@@ -105,7 +105,7 @@ async function showPlayed() {
   });
 
   console.log(
-    "Here are the unplayed songs: " +
+    "Here are the played songs: " +
       unPlayedSongs.map(function (song) {
         return song.title;
       })
