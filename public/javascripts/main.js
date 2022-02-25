@@ -1,7 +1,7 @@
 // import songlist from "../../database/songs-data.js";
 // import { port } from "../../bin/www.js";
 
-const url = `http://localhost:3000`;
+const url = `https://repertoire-tracker.herokuapp.com/`;
 
 let getAllSongsButton = document.getElementById("get-all-songs");
 let songsDisplayArea = document.getElementById("songs-display-area");
