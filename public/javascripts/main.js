@@ -1,5 +1,7 @@
 // import songlist from "../../database/songs-data.js";
-const url = "http://localhost:3005";
+// import { port } from "../../bin/www.js";
+
+const url = `http://localhost:3000`;
 
 let getAllSongsButton = document.getElementById("get-all-songs");
 let songsDisplayArea = document.getElementById("songs-display-area");
