@@ -27,7 +27,7 @@ function handleDateSubmit() {
 
 async function showAllSongs() {
   console.log("trying");
-  let response = await fetch(`${url}/songs`);
+  let response = await fetch(`/songs`);
   allSongs = await response.json();
   console.log(allSongs);
   songsDisplayArea.innerHTML = "";
