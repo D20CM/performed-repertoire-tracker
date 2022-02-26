@@ -56,7 +56,7 @@ async function showAllSongs() {
 
 async function markAsPlayed(id, date) {
   console.log("about to update date");
-  let response = await fetch(`${url}/songs/${id}`, {
+  let response = await fetch(`/songs/${id}`, {
     method: "PATCH",
     body: JSON.stringify(date),
     headers: {
