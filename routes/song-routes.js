@@ -28,6 +28,12 @@ router.get("/songs/:id", async function (req, res) {
 
 router.post("/songs", async function (req, res) {
   let newSong = req.body;
+
+  const { title, artist, lastperformed } = req.body;
+  if (!title || !artist || !lastperformed) {
+    res.send(400);
+    return;
+  }
   const addedSong = await addSong(newSong);
   res.json(addedSong);
 });
@@ -35,6 +41,13 @@ router.post("/songs", async function (req, res) {
 router.put("/songs/:id", async function (req, res) {
   let id = Number(req.params.id);
   let update = req.body;
+
+  const { title, artist, lastperformed } = req.body;
+  if (!title || !artist || !lastperformed) {
+    res.send(400);
+    return;
+  }
+
   let updatedSong = await updateSong(id, update);
   res.json(updatedSong);
 });
