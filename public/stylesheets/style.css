@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
   /* background: rgb(33, 64, 164);
    */
   /* background: linear-gradient(
@@ -12,6 +13,11 @@ body {
   color: whitesmoke;
   text-align: center;
   height: 100vh;
+}
+
+h1{
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 a {

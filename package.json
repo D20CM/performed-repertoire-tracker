@@ -1,6 +1,7 @@
 {
   "name": "performed-repertoire-tracker",
   "version": "0.0.0",
+  "description": "Use this to track which songs in your repertoire have been played since any given date.",
   "private": true,
   "type": "module",
   "scripts": {
