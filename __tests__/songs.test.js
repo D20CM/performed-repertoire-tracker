@@ -27,17 +27,17 @@ describe("GET /songs/:id", () => {
 
 //POST ROUTES
 describe("POST /songs", () => {
-  it("responds to /songs", async () => {
-    const actual = await request(app).post("/songs").send({
-      title: "some-title",
-      artist: "some-artist",
-      lastperformed: "01/01/2022",
-    });
-    expect(actual.status).toBe(200);
-    expect(actual.headers["content-type"]).toEqual(
-      expect.stringContaining("json")
-    );
-  });
+  // it("responds to /songs", async () => {
+  //   const actual = await request(app).post("/songs").send({
+  //     title: "some-title",
+  //     artist: "some-artist",
+  //     lastperformed: "01/01/2022",
+  //   });
+  //   expect(actual.status).toBe(200);
+  //   expect(actual.headers["content-type"]).toEqual(
+  //     expect.stringContaining("json")
+  //   );
+  // });
 
   it("should res 400 a post request if any of the properties are missing", async () => {
     const bodies = [

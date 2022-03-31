@@ -25,17 +25,42 @@ function handleDateSubmit() {
   showAllSongs();
 }
 
+function displayDay(day) {
+  day = day.toString();
+  while (day.length < 2) {
+    day = "0" + day;
+  }
+  return day;
+}
+
+function displayMonth(month) {
+  month = (month + 1).toString();
+  while (month.length < 2) {
+    month = "0" + month;
+  }
+  return month;
+}
+
 async function showAllSongs() {
   console.log("trying");
   let response = await fetch(`/songs`);
   allSongs = await response.json();
-  console.log(allSongs);
+
   songsDisplayArea.innerHTML = "";
 
   allSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
+    let performedDate = new Date(Date.parse(item.lastperformed));
+
+    let niceDate =
+      displayDay(performedDate.getDate()) +
+      "/" +
+      displayMonth(performedDate.getMonth()) +
+      "/" +
+      performedDate.getFullYear();
+
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${niceDate} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
@@ -45,11 +70,11 @@ async function showAllSongs() {
     uniqueButton.addEventListener("click", async function wrapper() {
       await markAsPlayed(uniqueButton.id, { lastperformed: today });
     });
-    console.log(Date.parse(item.lastperformed));
+
     if (Date.parse(item.lastperformed) < referenceDate) {
       uniqueSong.style.color = "#6beb34";
     } else if (Date.parse(item.lastperformed) > referenceDate) {
-      uniqueSong.style.color = "Red";
+      uniqueSong.style.color = "#ff5454";
     }
   });
 }
@@ -64,7 +89,7 @@ async function markAsPlayed(id, date) {
     },
   });
   let updatedSong = await response.json();
-  console.log(updatedSong);
+  console.log("Song updated to reflect today's performance. ", updatedSong);
   showAllSongs();
 }
 
@@ -86,11 +111,20 @@ async function showUnplayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
+    let performedDate = new Date(Date.parse(item.lastperformed));
+
+    let niceDate =
+      displayDay(performedDate.getDate()) +
+      "/" +
+      displayMonth(performedDate.getMonth()) +
+      "/" +
+      performedDate.getFullYear();
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${niceDate} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
     songsDisplayArea.append(uniqueSong);
+    uniqueSong.style.color = "#6beb34";
     uniqueSong.append(uniqueButton);
     uniqueButton.id = item.id;
     uniqueButton.addEventListener("click", async function wrapper() {
@@ -117,11 +151,20 @@ async function showPlayed() {
   unPlayedSongs.forEach(function (item) {
     let uniqueSong = document.createElement("div");
     uniqueSong.classList.add("song");
-    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${item.lastperformed} </p>`;
+    let performedDate = new Date(Date.parse(item.lastperformed));
+
+    let niceDate =
+      displayDay(performedDate.getDate()) +
+      "/" +
+      displayMonth(performedDate.getMonth()) +
+      "/" +
+      performedDate.getFullYear();
+    uniqueSong.innerHTML = `<p>${item.id}.</p> <p>${item.title}</p> <p class="date-in-table">${niceDate} </p>`;
     let uniqueButton = document.createElement("button");
     uniqueButton.innerText = "played";
     uniqueButton.classList.add("playedButtons");
     songsDisplayArea.append(uniqueSong);
+    uniqueSong.style.color = "#ff5454";
     uniqueSong.append(uniqueButton);
     uniqueButton.id = item.id;
     uniqueButton.addEventListener("click", async function wrapper() {
