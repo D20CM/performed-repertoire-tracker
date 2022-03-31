@@ -24,13 +24,57 @@ a {
   color: #00b7ff;
 }
 
+
+#date-input{
+  box-shadow:  0 0 0 2px black,0 0 0 6px yellow, 0 0 0 7px black; 
+  margin: 2em;
+}
+
+#date-submit{
+  margin: 2em;
+  padding: 0.7em 3em;
+ text-transform: uppercase;
+ font-weight: 600;
+ background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+ 
+color: whitesmoke;
+border: 2px solid rgb(43, 43, 43);
+
+transition: 0.5s ease all;
+box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.75);
+}
+
+#date-submit:hover{
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+border: 2px solid yellow;
+border-radius: 4px;
+transition: 0.5s ease all;
+
+
+
+}
+
 button {
   margin: 1em;
-  padding: 0.2em 1em;
+  padding: 0.4em 1em;
   /* border-radius: 30px; */
   box-shadow: rgba(0, 0, 0, 0.288) 0px 3px 8px;
   /* text-transform: uppercase; */
   /* letter-spacing: 0.4px; */
+  transition: all ease 0.3s;
+
+}
+
+button:hover{
+  transform: scale(1.1);
+  transition: all ease 0.3s;
 }
 
 nav {
