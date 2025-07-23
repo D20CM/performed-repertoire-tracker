@@ -17,6 +17,7 @@ router.get("/", function (req, res, next) {
 
 router.get("/songs", async function (req, res) {
   let allSongs = await getAllSongs();
+
   res.json(allSongs);
 });
 

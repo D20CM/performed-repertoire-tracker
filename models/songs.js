@@ -6,6 +6,7 @@ export async function getAllSongs() {
     "SELECT id, title, artist, TO_CHAR(lastperformed,'mm/dd/yyyy') As lastperformed FROM songlist ORDER BY title;"
   );
   console.log(allSongs.rows);
+
   return allSongs.rows;
 
   // let allSongs = songlist;

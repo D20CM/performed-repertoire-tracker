@@ -42,10 +42,8 @@ function displayMonth(month) {
 }
 
 async function showAllSongs() {
-  console.log("trying");
   let response = await fetch(`/songs`);
   allSongs = await response.json();
-
   songsDisplayArea.innerHTML = "";
 
   allSongs.forEach(function (item) {
